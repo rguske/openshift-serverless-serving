@@ -1,0 +1,10 @@
+apiVersion: serving.knative.dev/v1beta1
+kind: DomainMapping
+metadata:
+ name: <domain_name> 
+ namespace: <namespace> 
+spec:
+ ref:
+   name: <target_name> 
+   kind: <target_type> 
+   apiVersion: serving.knative.dev/v1

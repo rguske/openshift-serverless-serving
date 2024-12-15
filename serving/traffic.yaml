@@ -1,0 +1,17 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: example-service
+  namespace: default
+spec:
+...
+  traffic:
+  - tag: current
+    revisionName: example-service-1
+    percent: 50
+  - tag: candidate
+    revisionName: example-service-2
+    percent: 50
+  - tag: latest
+    latestRevision: true
+    percent: 0
